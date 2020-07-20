@@ -1,42 +1,76 @@
 import 'package:flutter/material.dart';
- 
 
-class Home extends StatelessWidget {
+
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-              backgroundColor: Color(0xFF7B1FA2),
-        title: Text("Home")
-
-      ),
+    return new MaterialApp(
+        home: new Scaffold(
+      backgroundColor: Colors.white,
+      appBar: new AppBar(
+        backgroundColor: Colors.white,
+        title: Text('Home',  style: TextStyle(
+                  color: Colors.purple[700],), 
+      )),
       body: Center(
         child: Column(
-           children: <Widget> [
-         new MaterialButton(
-          onPressed: null,
-          color: Colors.red[300],
-        child: Text('chat rooms'), 
-        minWidth: 100.0,
-        height: 100.0,),
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Image(
+              image: new AssetImage('images/levelup.jpg'),
+                  alignment: Alignment.center,
 
-         new MaterialButton(onPressed:  null,
-        color: Colors.red[300],
-        child: Text('updates'), 
-        minWidth: 100.0,
-        height: 100.0,),
-         
-        new MaterialButton(onPressed: null,
-        color: Colors.red[300],
-        child: Text('membership',), 
-        minWidth: 100.0,
-        height: 100.0,), 
-        ]
-        )
+              width: 300,
+              height: 300,
+            ),
+            Material(
+              elevation: 20.0,
+              borderRadius: BorderRadius.circular(50.0),
+              color: Colors.white,
+              child: MaterialButton(
+                onPressed: (null),
+                child: Text(
+                  "Game Rooms",
+                  style: TextStyle(
+                    color: Colors.purple,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            Material(
+              elevation: 10.0,
+              borderRadius: BorderRadius.circular(50.0),
+              color: Colors.white,
+              child: MaterialButton(
+                onPressed: (null),
+                child: Text( 
+                  "Membership",
+                  style: TextStyle(
+                    color: Colors.purple,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            Material(
+              elevation: 10.0,
+              borderRadius: BorderRadius.circular(50.0),
+              color: Colors.white,
+              child: MaterialButton(
+                onPressed: (null),
+                child: Text(
+                  "Game Profiles",
+                  style: TextStyle(
+                    color: Colors.purple,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
-    );
+    ));
   }
-}
-
-class _purplePrimaryValue {
 }
