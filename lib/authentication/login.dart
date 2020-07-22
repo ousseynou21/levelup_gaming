@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:levelup_gaming/authentication/auth.dart';
+import 'package:levelup_gaming/authentication/user.dart';
 
 
 class Login extends StatefulWidget {
@@ -12,7 +14,7 @@ class _LoginState extends State<Login> {
   String email = "";
   String password = "";
   final _formKey = GlobalKey<FormState>();
-
+  Auth auth= Auth();
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -93,8 +95,10 @@ class _LoginState extends State<Login> {
                       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                       onPressed: () async {
                         if (_formKey.currentState.validate()) {
-                          print(email);
-                          print(password);
+                            
+                         User user = await auth.registerUser(email, password);
+                         print(user.uid);
+                          print(user.email);
                         }
                       },
                       child: Text(
